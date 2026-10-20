@@ -1,0 +1,38 @@
+{
+  "checked_date": "2026-10-20",
+  "build": "passed",
+  "automated_tests": 36,
+  "passed": 36,
+  "database_migration_applied": false,
+  "real_hardware_connected": false,
+  "demo_device_count": 8,
+  "responsive_widths": [
+    320,
+    390,
+    768,
+    1280,
+    1440
+  ],
+  "horizontal_overflow": false,
+  "ui_checked": [
+    "map tile loading",
+    "pin selection",
+    "red status details",
+    "black status filter/search",
+    "matching map and list counts",
+    "device list 8 rows",
+    "attention list 4 rows",
+    "empty search",
+    "criteria modal and Escape/focus return",
+    "mobile detail auto-scroll",
+    "6h and 24h chart controls",
+    "live mode missing schema error",
+    "CSV downloaded with 8 rows and 9 columns"
+  ],
+  "api_probe": "503 when not configured",
+  "limitations": [
+    "Real sensor accuracy, calibration, radio coverage, battery life and field criteria not validated",
+    "Hosted migration and real gateway deployment remain pending",
+    "Mobile tests used browser viewport emulation, not physical devices"
+  ]
+}
