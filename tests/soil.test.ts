@@ -6,7 +6,7 @@ import {evaluateDevice,makeDemoDevices,metricStatus} from '../lib/soil/model.ts'
 import {validateSoilPayload} from '../lib/soil/ingest.ts';
 const now=Date.parse('2026-10-20T06:00:00Z');
 test('soil screening includes boundaries and never assesses stale, partial or faulted readings',()=>{
- const d=makeDemoDevices(now)[0];assert.equal(evaluateDevice(d,now).status,'pass');
+ const d=makeDemoDevices(now)[0];d.reading!.moisture=30;assert.equal(evaluateDevice(d,now).status,'pass');
  assert.equal(metricStatus('ph',5.5),'pass');assert.equal(metricStatus('ph',5),'risk');assert.equal(metricStatus('ph',4.99),'fail');assert.equal(metricStatus('ph',7),'pass');assert.equal(metricStatus('ph',7.5),'risk');assert.equal(metricStatus('ph',7.51),'fail');
  assert.equal(evaluateDevice({...d,reading:{...d.reading!,ph:4}},now).status,'fail');
  for(const patch of [{at:new Date(now-31*60000).toISOString()},{at:'bad'},{fault:'probe_error'},{ph:null},{ph:NaN}])assert.equal(evaluateDevice({...d,reading:{...d.reading!,...patch}},now).status,'offline');

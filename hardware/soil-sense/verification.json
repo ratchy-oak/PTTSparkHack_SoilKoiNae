@@ -1,0 +1,20 @@
+{
+  "components": 6,
+  "sensors": 3,
+  "wires": 16,
+  "original_edges_preserved": true,
+  "checks": [
+    "12V isolated from board and analog moisture",
+    "A0 only dedicated moisture signal",
+    "D3 only rainfall dry contact",
+    "RS485 A/B preserved",
+    "all wire endpoints match component terminals"
+  ],
+  "hardware_tested": false,
+  "sensor_simulation": false,
+  "rain_part": "custom passive 2-wire reference; catalog photo is form-factor illustration",
+  "depth2_part": "capacitive analog diagram reference; outdoor BOM SEN0308",
+  "cirkit_import_verified": true,
+  "preview": "circuit-preview.png",
+  "displayed_project_title": "Soil Sense - Soil + Rain"
+}

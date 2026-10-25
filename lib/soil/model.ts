@@ -1,7 +1,9 @@
+import {referenceForDate,SOYBEAN_REFERENCE} from './reference.ts';
+import type {WaterProfile} from './water.ts';
 export type SoilStatus='pass'|'risk'|'fail'|'offline';
 export type MetricKey='ph'|'ec'|'moisture'|'temperature';
 export type Reading={at:string;ph:number|null;ec:number|null;moisture:number|null;temperature:number|null;battery:number|null;signal:number|null;fault:string|null};
-export type SoilDevice={id:string;name:string;plot:string;village:string;lat:number;lng:number;area:number;installed_at:string;reading:Reading|null;history:Reading[]};
+export type SoilDevice={id:string;name:string;plot:string;village:string;lat:number;lng:number;area:number;installed_at:string;water?:WaterProfile;reading:Reading|null;history:Reading[]};
 export const STATUS:Record<SoilStatus,{label:string;short:string;color:string;symbol:string}>={pass:{label:'อยู่ในเกณฑ์',short:'อยู่ในเกณฑ์',color:'#227754',symbol:'✓'},risk:{label:'มีความเสี่ยง',short:'มีความเสี่ยง',color:'#A45C12',symbol:'!'},fail:{label:'นอกเกณฑ์',short:'นอกเกณฑ์',color:'#C34742',symbol:'×'},offline:{label:'อุปกรณ์มีปัญหา',short:'อุปกรณ์มีปัญหา',color:'#303943',symbol:'−'}};
 // Prototype screening profile only. Not an ICS certification standard or a prescription.
 export const METRICS:Record<MetricKey,{label:string;unit:string;min:number;max:number;warnMin:number;warnMax:number;precision:number;description:string}>={
@@ -28,7 +30,9 @@ export function evaluateDevice(device:SoilDevice,now:number=Date.now()):{status:
 export function relativeTime(at:string|null,now:number){if(!at)return 'ยังไม่มีข้อมูล';const minutes=Math.max(0,Math.floor((now-Date.parse(at))/60000));return minutes<1?'เมื่อสักครู่':minutes<60?`${minutes} นาทีที่แล้ว`:minutes<1440?`${Math.floor(minutes/60)} ชม. ที่แล้ว`:`${Math.floor(minutes/1440)} วันที่แล้ว`;}
 export function formatMetric(key:MetricKey,value:number|null){return value===null||!Number.isFinite(value)?'—':value.toFixed(METRICS[key].precision);}
 export function makeDemoDevices(now:number):SoilDevice[]{
- const values:[number,number,number,number][]=[[6.3,.82,42,28.4],[5.2,1.2,38,29.1],[4.6,2.6,33,30.2],[6.5,.94,46,27.8],[6.1,1.1,39,28.9],[6.7,1.4,22,31.2],[6.4,.75,49,28],[6,1.05,41,29.5]];
- const coords=[[15.033,104.033],[15.048,104.041],[15.023,104.057],[15.039,104.073],[15.061,104.061],[15.052,104.086],[15.018,104.083],[15.067,104.031]];
- return values.map((v,i)=>{const age=i===3?128:2+i;const at=new Date(now-age*60000).toISOString();const reading:Reading={at,ph:v[0],ec:v[1],moisture:v[2],temperature:v[3],battery:i===3?12:91-i*6,signal:-73-i*3,fault:null};const history:Reading[]=Array.from({length:25},(_,h)=>({...reading,at:new Date(Date.parse(at)-(24-h)*3600000).toISOString(),ph:Math.round((v[0]+Math.sin(h*.5)*.14)*100)/100,ec:Math.round((v[1]+Math.sin(h*.6)*.06)*100)/100,moisture:Math.round(v[2]+Math.sin(h*.4)*4),temperature:Math.round((v[3]+Math.sin(h*.3)*1.8)*10)/10}));history[24]=reading;return {id:`SQ-${String(i+1).padStart(3,'0')}`,name:`จุดตรวจ ${String(i+1).padStart(2,'0')}`,plot:`แปลงนาสาธิต ${String(i+1).padStart(2,'0')}`,village:`โซนสาธิต ${i<4?'เหนือ':'ใต้'}`,lat:coords[i][0],lng:coords[i][1],area:4+i*.5,installed_at:'2026-10-01',reading,history};});
+ const climate=referenceForDate(now);
+ const values:[number,number,number,number][]=[[6.3,.82,20,28.4]];
+ // Location supplied by the user via Google Maps; sensor readings remain simulated.
+ const coords=[[16.4695956,102.8133145]];
+ return values.map((v,i)=>{const age=i===3?128:2+i;const at=new Date(now-age*60000).toISOString();const reading:Reading={at,ph:v[0],ec:v[1],moisture:20,temperature:v[3],battery:i===3?12:91-i*6,signal:-73-i*3,fault:null};const history:Reading[]=Array.from({length:25},(_,h)=>({...reading,at:new Date(Date.parse(at)-(24-h)*3600000).toISOString(),ph:Math.round((v[0]+Math.sin(h*.5)*.14)*100)/100,ec:Math.round((v[1]+Math.sin(h*.6)*.06)*100)/100,moisture:Math.round((reading.moisture!+Math.sin(h*.4)*1)*10)/10,temperature:Math.round((v[3]+Math.sin(h*.3)*1.8)*10)/10}));history[24]=reading;return {id:`SQ-${String(i+1).padStart(3,'0')}`,name:`จุดตรวจ ${String(i+1).padStart(2,'0')}`,plot:'แปลงเกษตรกรรม มข.',village:'มหาวิทยาลัยขอนแก่น · จุดสาธิต',lat:coords[i][0],lng:coords[i][1],area:4+i*.5,installed_at:'2026-10-01',water:{fc:SOYBEAN_REFERENCE.fc,wp:SOYBEAN_REFERENCE.wp,rootDepth:.6,p:.5,layers:[{theta:reading.moisture!/100,thickness:.3},{theta:reading.moisture!/100+.01,thickness:.3}],eto:climate.eto,kc:SOYBEAN_REFERENCE.kcMid,weatherDate:new Date(now).toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'}),calibrated:true,source:'ค่าดินและภูมิอากาศจากสไลด์ · สมมติระยะกลางฤดูและราก 60 ซม. · ความชื้นจำลอง'},reading,history};});
 }

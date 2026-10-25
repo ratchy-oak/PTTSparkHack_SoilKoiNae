@@ -1,0 +1,17 @@
+Use case: productivity-visual. Create ONE finished Thai Executive Summary presentation slide, landscape 16:9, requested resolution 1920x1080. Flat slide artwork filling canvas, no browser chrome, no perspective mockup. Match user's established deck: dark olive #2e3425 outer background, very large warm ivory rounded panel, dark olive bold Kanit-like Thai typography, burnt orange #e65329 accents, a thin muted gold outline decoration. Sophisticated balanced whitespace, 64px outer safe margins, consistent grid, concise legible Thai text with correct tone marks.
+References: image1 soybean cross section with two sensors is an illustrative asset to reuse prominently, not field test photography. Image2 is the actual existing prototype website screenshot; incorporate as a smaller faithfully preserved screenshot crop in solution visual, labeled 'ตัวอย่างหน้าจอต้นแบบ'. Do not imply screenshot readings are field results. Keep imagery crisp and avoid lots of tiny text.
+Layout: upper header 18%, left column 34% contains Problem and Opportunity, right 58% contains solution title and strong image composition sensor plant → dashboard, bottom full width band has two columns readiness and ask. Main text sizes generous and balanced, not crowded. Header title 'Soil ข่อยแน' large, small eyebrow 'EXECUTIVE SUMMARY'; tagline orange 'เริ่มดูแลดิน จากการเข้าใจดิน'; subtitle 'ระบบช่วยวางแผนให้น้ำถั่วเหลืองรายแปลง'
+Exact content:
+Left heading 'ปัญหา'
+Body 'ชุมชนผักไหม จ.ศรีสะเกษ เผชิญน้ำจำกัดช่วงฤดูแล้ง และขาดข้อมูลน้ำในเขตรากเพื่อจัดลำดับแปลงที่ควรดูแล'
+Left next heading 'โอกาส'
+Body 'ใช้ข้อมูลดินช่วยวางแผนให้น้ำตรงจุด ผ่านเจ้าหน้าที่ที่ทำงานร่วมกับเกษตรกร'
+Right heading 'Soil Sense + Soil Connect'
+Body 'วัดความชื้นดินสองระดับ ประเมินสถานะน้ำและแนวโน้มตามหลักการ FAO-56'
+Under visual a concise flow 'วัดดิน → ประเมินสถานะ → วางแผนร่วมกับเกษตรกร'
+Bottom left heading 'ความพร้อมและก้าวต่อไป'
+Body 'มีต้นแบบและทดลองเบื้องต้นที่แปลงเกษตรกรรม มข.'
+Second line 'เสนอทดลองร่วมกับชุมชน 12 สัปดาห์ เพื่อประเมินความถูกต้อง การใช้น้ำ และการใช้งาน'
+Bottom right heading 'สิ่งที่ต้องการสนับสนุน'
+Body 'พื้นที่และผู้ประสานงานชุมชน • ผู้เชี่ยวชาญด้านดินและน้ำ • งบสอบเทียบและเก็บข้อมูล'
+No invented savings, yields, partnerships, no extra logos, no equations, no decorative fake field photographs. Meticulously typeset Thai, preserve all supplied claims as preliminary/proposed.

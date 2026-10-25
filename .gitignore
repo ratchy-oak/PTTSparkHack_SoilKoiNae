@@ -9,3 +9,10 @@ coverage/
 tmp/
 .DS_Store
 *.tsbuildinfo
+
+# Local recordings and submission exports
+/Screen Recording *.mov
+/Screenshot *.png
+/VIDEO/
+/*.mp4
+/หยินหยางไม่หมางเมิน - Soil ข่อยแน.pdf

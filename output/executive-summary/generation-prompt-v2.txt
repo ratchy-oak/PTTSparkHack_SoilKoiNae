@@ -1,0 +1,28 @@
+Create a refined second version of the attached Thai executive summary slide. Output ONE flat presentation slide 16:9 landscape, requested 1920x1080. This is a high quality editorial pitch slide, not a poster of many cards. Retain exact project name "Soil ข่อยแน", olive #2e3425, warm ivory #fcfaf5, burnt orange accent #e65329 and subtle gold. Keep the soybean root cross section with two probes from reference as the visual hero. Beautiful flat clean typography resembling Kanit, precise Thai diacritics, no gradients, no shadows, no decorative 3D icons, no repeated rounded borders. One ivory canvas inside restrained dark olive outer margin. Generous whitespace and clear alignment. Header 20%, main content 54%, footer 26%. Minimum comfortable body text. Balanced 38% left content and 62% right visual.
+IMPORTANT accuracy improvements: remove old dashboard screenshot with irrelevant pH alerts. Replace with a clearly labeled conceptual interface showing only an olive map schematic with three water status dots and simple three-state legend; NO numerical readings, no fake field measurements. Title this visual "แนวคิดหน้าจอ Soil Connect". Do not fabricate field trial photos. The plant picture is illustrative.
+Header: small eyebrow "EXECUTIVE SUMMARY"; large title "Soil ข่อยแน"; orange tagline "เริ่มดูแลดิน จากการเข้าใจดิน"; subtitle "ข้อมูลน้ำในดิน เพื่อช่วยวางแผนให้น้ำถั่วเหลืองรายแปลง"
+Left: two well separated text sections, orange small numbering 01 and 02, no boxes.
+Heading "ปัญหา"
+Body "ชุมชนผักไหม จ.ศรีสะเกษ เผชิญน้ำจำกัดช่วงฤดูแล้ง ผู้ดูแลขาดข้อมูลน้ำในเขตรากเพื่อจัดลำดับแปลงที่ควรดูแล"
+Heading "โอกาส"
+Body "ใช้ข้อมูลดินช่วยจัดลำดับการดูแลและวางแผนใช้น้ำที่มี ผ่านเจ้าหน้าที่ที่ทำงานร่วมกับเกษตรกร"
+Right: heading "Soil Sense → Soil Connect"
+One short explanatory line "วัดความชื้นสองระดับ → ประเมินน้ำในเขตราก → ช่วยตัดสินใจให้น้ำ"
+Arrange plant cross section with two probes left, conceptual minimal map/interface right linked with thin orange arrow. Include explicit legend with green orange red respectively "น้ำยังพอ" "เตรียมให้น้ำ" "ถึงเกณฑ์ให้น้ำ". Interface title "แนวคิดหน้าจอ Soil Connect".
+Under visual concise two-line explanation:
+"ประยุกต์หลักการ FAO-56 ประเมินน้ำพร่องและแนวโน้ม"
+"ผู้ดูแลตรวจสภาพแปลงและฝนจริงก่อนตัดสินใจ"
+Footer separated by thin olive rule, THREE aligned columns, no heavy card outlines:
+Column1 heading "ทำแล้ว"
+Text "มีต้นแบบและทดลองเบื้องต้น
+ณ แปลงเกษตรกรรม
+มหาวิทยาลัยขอนแก่น"
+Column2 heading "ก้าวต่อไป"
+Text "เสนอทดลองกับชุมชน 12 สัปดาห์
+วัดความถูกต้อง ปริมาณน้ำที่ใช้
+และความสะดวกในการใช้งาน"
+Column3 heading "ขอการสนับสนุน"
+Text "พื้นที่ทดลองและผู้ประสานงาน
+ผู้เชี่ยวชาญด้านดินและน้ำ
+งบสอบเทียบและเก็บข้อมูล"
+Content integrity: no claim of proven savings, improved yield, automatic irrigation or genuine future rain prediction. Forecast basis not discussed in this executive slide. No score 10/10 printed. Do not add irrelevant SDG icons, formulas, numerical demo readings, source footnotes, or English other than provided headings/names. Professional restrained clean hierarchy. All Thai must render exactly and legibly. Keep body concise as supplied.
